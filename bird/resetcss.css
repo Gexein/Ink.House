@@ -1,0 +1,86 @@
+/* Блочная модель */
+
+*,
+::before,
+::after {
+    box-sizing: border-box;
+}
+
+/* Отступы элементов списка, у которых есть класс*/
+
+:where(ul, ol):where([class]) {
+    padding-left: 0;
+}
+
+/* Убираем внешние отступы body и двум другим тегам, у которых есть атрибут class */
+
+body,
+:where(blockquote, figure):where([class]) {
+    margin: 0;
+}
+
+/* Убираем внешние отступы вертикали нужным тегам, у которых есть атрибут class */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+dl {
+    margin-block: 0;
+    padding: 0;
+}
+
+:where(dd[class]) {
+    margin-left: 0;
+}
+
+:where(fieldset[class]) {
+    margin-left: 0;
+    padding: 0;
+    border: none;
+}
+
+/* Убираем маркеры списков */
+
+ul,
+li {
+    list-style: none;
+}
+
+/* Убираем отступы параграфам */
+
+p {
+    margin-block: 0;
+}
+
+/* Наследуем свойства шрифт для полей ввода */
+input,
+textarea,
+select,
+button {
+    font: inherit;
+}
+
+
+
+/* Убираем скачок интерфейса по горизонтали при появлении / исчезновении скроллбара */
+html {
+    scrollbar-gutter: stable;
+}
+
+/* Плавный скролл */
+html,
+:has(:target) {
+    scroll-behavior: smooth;
+}
+
+/* Ссылки */
+a {
+    text-decoration: none;
+    font-family: inherit;
+    color: inherit;
+}
